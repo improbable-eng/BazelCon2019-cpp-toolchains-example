@@ -146,7 +146,6 @@ cc_toolchain_suite(
         "arm64_v8a": ":arm64_v8a-android",
         "armeabi_v7a": ":armeabi_v7a-android",
         "x86_64-android": ":x86_64-android",
-        "x86-android": ":x86-android",
     },
 )
 
@@ -224,25 +223,4 @@ cc_toolchain(
     strip_files = ":x86_64-android-all_files",
     supports_param_files = 1,
     toolchain_config = ":config-x86_64-android",
-)
-
-android_cc_toolchain_config(
-    name = "config-x86-android",
-    arch = "x86",
-    ndk_version = "24",
-)
-
-cc_toolchain(
-    name = "x86-android",
-    all_files = ":x86-android-all_files",
-    ar_files = ":x86-android-all_files",
-    compiler_files = ":x86-android-all_files",
-    dwp_files = ":x86-android-all_files",
-    dynamic_runtime_lib = ":libcpp-x86-android-dynamic-runtime-libraries",
-    linker_files = ":x86-android-all_files",
-    objcopy_files = ":x86-android-all_files",
-    static_runtime_lib = ":libcpp-x86-android-static-runtime-libraries",
-    strip_files = ":x86-android-all_files",
-    supports_param_files = 1,
-    toolchain_config = ":config-x86-android",
 )
